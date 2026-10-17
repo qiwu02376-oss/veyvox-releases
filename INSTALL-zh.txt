@@ -1,0 +1,20 @@
+Veyvox 0.4.1 beta.1 — Apple Silicon Mac 测试版
+
+1. 将 Veyvox.app 拖到 Applications（应用程序）中，再从应用程序打开。
+2. 打开「配置指引」，在 AI Engine 里依次安装 Moonshine 和 Qwen3，约 3 GB；Whisper 可选。
+3. 下载完成后点击「检测本地模型」。通过后允许麦克风并开始翻译。
+
+无需终端、Python、Node、单独安装 Ollama 或 API Key。首次模型下载需要网络；下载后语音识别与中文翻译在本机运行。请预留至少 8 GB 可用磁盘空间；建议 16 GB 或更多内存（8 GB 机器未验证）。
+
+适用于 Apple Silicon（M 系列），构建目标 macOS 15 或更高；本次实测为 macOS 27.0.1。macOS 15/26 和其他机器尚待用户实测。不支持 Intel Mac、Windows 或手机。
+
+这是测试版，尚无 Apple Developer ID 签名或公证。若 macOS 提示无法验证开发者，请确认文件来自本仓库，再按 Apple 官方说明在「系统设置 → 隐私与安全性」选择「仍要打开」。不要关闭系统安全保护。
+https://support.apple.com/102445
+
+英文语音识别和中文翻译可能漏词或误译，尤其是远场、噪声和多人讲话；本次自动测试使用合成语音，不代表真实教室准确率。首次加载模型比连续使用慢。模型下载受网络影响，失败时可取消或重试。
+
+关闭窗口会保留后台服务；完全退出请使用菜单「退出 Veyvox」。退出时先保存录音，再停止 App 自己启动的服务。
+
+下载与反馈：https://github.com/qiwu02376-oss/veyvox-releases
+许可证与第三方声明位于 Veyvox.app/Contents/Resources/ThirdParty。
+此安装包不含开发者的课堂录音、笔记、模型权重或 API 密钥。
