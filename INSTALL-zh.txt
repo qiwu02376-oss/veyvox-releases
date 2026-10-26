@@ -1,22 +1,27 @@
-Veyvox 0.4.2 beta.1 — Apple Silicon Mac 测试版
+Orva 0.6.0 beta.1 — 原 Veyvox 的最新多语言测试版
 
-1. 将 Veyvox.app 拖到 Applications（应用程序），再从应用程序打开。
-2. 打开「配置指引」，在 AI Engine 中依次安装 Moonshine 和 Qwen3，合计约 3 GB；Whisper 可选。
-3. 下载完成后点击「检测本地模型」。检测通过后允许麦克风并开始翻译。
+1. 打开 DMG，把 Orva.app 拖到 Applications（应用程序），从应用程序启动。
+2. 打开「连接与配置 → AI Engine」。模型不随安装包提供，需要首次联网下载。
+3. 英语课堂：安装 Parakeet 和 Index-Translate，选择英语→简体中文及 Index。也可按原流程安装 Qwen3。
+4. 普通话、日语、西班牙语、韩语、法语、德语或俄语：安装 Whisper small 多语言及 Index-Translate，在主界面选择源语言和目标语言。
+5. 完成下载后确认课堂允许转写，选择正确麦克风或网课音频源，再点「开始翻译」。首次模型加载会更慢。
 
-无需终端、Python、Node、单独安装 Ollama 或 API Key。首次下载模型需要联网；下载后识别和翻译在本机运行。建议 16 GB 或更多内存，至少预留 8 GB 可用磁盘空间；8 GB 内存机器尚未验证。
+本地识别和本地翻译无需终端、Python、Node、单独安装 Ollama 或 API Key。首次下载完成后可离线使用。Qwen-MT、DeepL 和 Google NMT 是另外的在线选项；只有主动选择并配置后才涉及云端，实际可用性、额度与费用保护以界面为准。
 
-仅适用于 Apple Silicon（M 系列）Mac。构建目标 macOS 15+，实测为 macOS 27.0.1；macOS 15/26 尚未实机验证。不支持 Intel Mac、Windows 或手机。
+仅支持 Apple Silicon（M 系列）Mac；构建目标 macOS 15+，已在 M4 / 16 GB 测试。其他 macOS 版本及 8 GB 内存机型未完成实机验收。建议 16 GB 或更多内存并为 App、所选模型和课堂录音预留至少 10 GB 空间。不支持 Intel Mac、Windows、手机。
 
-这是未经过 Apple Developer ID 签名与公证的测试版。若 macOS 提示无法验证开发者，确认文件来自官方仓库后，按 Apple 官方说明在「系统设置 → 隐私与安全性」选择「仍要打开」。不要关闭系统安全保护。
+这是未经过 Apple Developer ID 签名及公证的公开测试版。macOS 可能阻止首次打开。确认来自此仓库后，按 Apple 官方说明在「系统设置 → 隐私与安全性」选择「仍要打开」；不要关闭系统安全保护。
 https://support.apple.com/102445
 
-0.4.2 修复了运行后 Python 缓存改变应用内容的问题，调整了打包流程，并校验生成的 DMG 内应用签名。请用此版替代 0.4.1 beta.1。
+升级：退出旧 Veyvox/Orva 后再替换 App。记录、设置和模型在 ~/Library/Application Support/Orva；会尝试迁移旧 Veyvox 数据，旧数据移动失败时保留原目录。删除旧 App 前请确认新 App 能读取已有记录，不要删除 Application Support 中的数据目录。
 
-自动测试使用合成语音，不能代表真实教室准确率。远场、噪声和多人讲话仍可能造成漏词、误译或延迟。第一次加载模型较慢；下载失败可取消或重试。
+自动语言检测尚未启用，请手动选择源语言。Qwen3 仍以英译中为已验证基线，Gemma 非英语互译未开放，Google NMT 仍受费用保护限制。
 
-关闭窗口会保留后台服务；完全退出请使用菜单「退出 Veyvox」。旧浏览器记录不会自动导入。
+八方向验证使用合成短语音，连续十分钟验证使用循环合成普通话，不代表真实课堂准确率。日语术语、俄语专业译法、远场、多说话人和强制切段可能听错、漏词、误译；重要内容应回听核对。
 
-下载与反馈：https://github.com/qiwu02376-oss/veyvox-releases/releases
-第三方许可证及 FFmpeg 对应源码随 App 提供，位于 Contents/Resources/ThirdParty。
-安装包不含开发者的课堂录音、笔记、模型权重或密钥。
+关闭窗口会保留后台服务；完全退出请用菜单「退出 Orva」。模型按需加载，自动更新尚未实现，需要下载新安装包手动替换。
+
+下载与反馈：https://github.com/qiwu02376-oss/veyvox-releases/releases/tag/v0.6.0-beta.1
+本仓库仅分发安装包，GitHub 自动生成的 Source code 压缩包不是 App。
+第三方许可证及 FFmpeg 对应源码在 App 的 Contents/Resources/ThirdParty 中。
+安装包不包含开发者的录音、课堂记录、笔记、模型权重或 API 密钥。
